@@ -1,12 +1,9 @@
 import { useState } from "react";
-import {checkEndGame,checkWinner} from "../log/boards.js"
-import {TURN} from "../constants.js"
+import { checkEndGame, checkWinner } from "../log/boards.js";
+import { TURN } from "../constants.js";
 import confetti from "canvas-confetti";
 
 export function useApp() {
-  //tablero
-  const boards = Array(9).fill(null);
-
   //los estados son asincronos siempre
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem("board");
@@ -63,7 +60,6 @@ export function useApp() {
     }
   };
 
- 
   return {
     TURN,
     board,
