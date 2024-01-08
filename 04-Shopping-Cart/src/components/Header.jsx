@@ -1,13 +1,14 @@
 import { FiltersContext } from "../context/filters.jsx";
 import { useContext,useId } from "react";
-export function Filters() {
+export function Header() {
   const {filters,handleChangeCategory,handleChangeMinPrice} = useContext(FiltersContext);
 
   const categorId = useId();
   const priceId = useId();
 
   return (
-    <section>
+    <header>
+            <h1>Shoping Cart: 🛒</h1>
       <div>
         <label htmlFor={priceId}>Price: {filters.minPrice}</label>
         <input
@@ -16,7 +17,7 @@ export function Filters() {
           name="Price"
           min="0"
           max="1749"
-          value={filters.price}
+          value={filters.minPrice}
           onChange={handleChangeMinPrice}
         />
       </div>
@@ -33,6 +34,6 @@ export function Filters() {
           <option value="smartphones">smartphones</option>
         </select>
       </div>
-    </section>
+    </header>
   );
 }
