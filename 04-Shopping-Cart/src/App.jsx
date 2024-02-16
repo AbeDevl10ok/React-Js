@@ -8,17 +8,16 @@ import { Footer } from "./components/Footer.jsx";
 import { useFilters } from "./hooks/useFilters.js";
 import { Cart } from "./components/Cart.jsx";
 //context
-import {CartProvider} from './context/cart.jsx'
+import { CartProvider } from './context/cart.jsx'
 function App() {
   const { filtersProducts } = useFilters();
   const listProduct = filtersProducts(initialProduct);
-
   return (
     <CartProvider>
-      <Header/>
-      <Cart/>
+      <Header />
+      <Cart />
       <Products listProduct={listProduct} />
-      <Footer/>
+      <Footer />
     </CartProvider>
   );
 }

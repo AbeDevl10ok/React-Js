@@ -37,7 +37,7 @@ export function CartProvider({children}){
         setCart(prevState => prevState.filter(item=>item.id !== product.id))
     }
 
-    const clearCart = product =>{
+    function clearCart (){
         setCart([])
     }
 
